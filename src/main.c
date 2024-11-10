@@ -10,6 +10,7 @@ int	main()
 	
 	ft_putendl_fd("Hello, World!", STDOUT_FILENO);
 	ft_printf("%d\n", ft_isalpha('a'));
+	// ft_error("testing\n");
 	fd = open("test.txt", O_RDONLY);
 	if (fd == -1) {
 		perror("Error opening file");
