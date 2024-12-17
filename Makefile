@@ -1,4 +1,4 @@
-NAME		=	main.a
+NAME		=	main
 
 SRCS		=	./src/main.c
 OBJS		=	$(SRCS:.c=.o)
@@ -9,13 +9,14 @@ RM			=	rm -f
 
 LIBFT_DIR	=	./libft
 LIBFT_NAME	=	libft.a
+LIBFT		=   $(LIBFT_DIR)/$(LIBFT_NAME)
 
 TEST_NAME	=	test
 
-all:		$(LIBFT_DIR)/$(LIBFT_NAME) $(NAME)
-			$(CC) $(CFLAGS) $(OBJS) $(LIBFT_DIR)/$(LIBFT_NAME) -o $(TEST_NAME)
+all:		$(LIBFT) $(NAME)
+			$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
-$(LIBFT_DIR)/$(LIBFT_NAME):
+$(LIBFT):
 			# make -C $(LIBFT_DIR)
 
 $(NAME):	$(OBJS)	
